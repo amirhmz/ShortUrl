@@ -1,7 +1,7 @@
 <?php /* Source By @Roonx_Team */
 
-define('API_KEY', 'TOKEN');
-$admin = "ADMIN";
+define('API_KEY', '381978516:AAEHtKj6OPoeFx0XRoa0YBL1MSNCRKKz0as');
+$admin = "119626024";
 function roonx($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -24,14 +24,14 @@ $from = $update->message->from->id;
     $short = file_get_contents('http://yeo.ir/api.php?url='.$text);
     roonx('sendMessage',[
       'chat_id'=>$chat_id,
-      'text'=>"لینک شما کوتاه شد: ".$short."\n\n@Roonx_Team",
+      'text'=>"لینک شما کوتاه شد :\n".$short."\n\n@UrlCuterBot",
       'parse_mode'=>'HTML'
     ]);
   }
   if(preg_match('/^\/([sS]tart)/',$text)){
 	  roonx('sendMessage',[
       'chat_id'=>$chat_id,
-      'text'=>"Hi!\nPlease Send A URL\n\n<b>Creator:</b> @Roonx_Team",
+      'text'=>"سلام!\nآدرس خود را ارسال کنید\n\n<b>@UrlCuterBot</b>",
       'parse_mode'=>'HTML'
     ]);
   }
@@ -41,7 +41,7 @@ $from = $update->message->from->id;
     $member_count = count($member_id) -1;
     roonx('sendMessage',[
       'chat_id'=>$chat_id,
-      'text'=>"تعداد کل اعضا: $member_count",
+      'text'=>"تعداد کل اعضا : $member_count",
       'parse_mode'=>'HTML'
     ]);
 }
